@@ -17,7 +17,7 @@ export default function Item(props){
       setItem({ ...item, [prop]: event.target.value });
     };
     const updateData = () =>{
-      axios.post("http://localhost:3001/job/update",{...item},{headers:{auth:localStorage.getItem("authtodo")}})
+      axios.post("http://65.2.125.131:3001/job/update",{...item},{headers:{auth:localStorage.getItem("authtodo")}})
       .then(result=>{
         // console.log(result);
         // setEdit(undefined)
@@ -41,7 +41,7 @@ export default function Item(props){
         
           </CardContent>
           <CardActions>
-              <img src="http://localhost:3001/img/user.png" alt="Girl in a jacket" width="20" height="20" style={{borderRadius:"25px"}}/>
+              <img src="http://65.2.125.131:3001/img/user.png" alt="Girl in a jacket" width="20" height="20" style={{borderRadius:"25px"}}/>
             </CardActions>
         </Card>
 

@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://DeMoNCodes.github.io",
+  "homepage": "https://demoncodes.github.io/frontend/",
   "dependencies": {
     "-": "0.0.1",
     "@emotion/react": "^11.7.1",

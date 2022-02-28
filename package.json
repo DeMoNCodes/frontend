@@ -1,8 +1,9 @@
 {
+  "homepage": "https://demoncodes.github.io/frontend",
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://demoncodes.github.io/",
+  
   "dependencies": {
     "-": "0.0.1",
     "@emotion/react": "^11.7.1",

@@ -1,7 +1,6 @@
 import { Button, Card, CardActions, CardContent, CardHeader, TextareaAutosize, TextField, Typography } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-
 import { v4 as uuidv4 } from 'uuid';
 import AddIcon from '@mui/icons-material/Add';
 import Item from "./item";
@@ -35,7 +34,7 @@ const onDragEnd = (result, columns, setColumns) => {
   let status = ar[result.destination.droppableId];
   console.log(_id);
   
-  axios.post("http://localhost:3001/job/update",{..._id[0],status},{headers:{auth:localStorage.getItem("authtodo")}})
+  axios.post("http://65.2.125.131:3001/job/update",{..._id[0],status},{headers:{auth:localStorage.getItem("authtodo")}})
   .then(result=>{
     // console.log(result);
     // setEdit(undefined)
@@ -114,7 +113,7 @@ function DragDrop() {
   const save = (name) =>{
     let ar = {"To do":0,"In Progress":1,"Done":2}
     let status = ar[name];
-    axios.post("http://localhost:3001/job/create",{...values,status},{headers:{auth:localStorage.getItem("authtodo")}})
+    axios.post("http://65.2.125.131:3001/job/create",{...values,status},{headers:{auth:localStorage.getItem("authtodo")}})
     .then(result=>{
         // console.log(result);
         setEdit(undefined)
@@ -129,7 +128,7 @@ function DragDrop() {
     let todo =[];
     let inp = [];
     let done =  [];
-    axios.post("http://localhost:3001/job",{status:0})
+    axios.post("http://65.2.125.131:3001/job",{status:0})
     .then(result=>{
       let count = 0;
       result.data.doc.map(e=>{
@@ -138,7 +137,7 @@ function DragDrop() {
       })
       todo =  result.data.doc;   
 
-      axios.post("http://localhost:3001/job",{status:1})
+      axios.post("http://65.2.125.131:3001/job",{status:1})
       .then(result=>{
         let count = 0;
         result?.data?.doc.map(e=>{
@@ -147,7 +146,7 @@ function DragDrop() {
         })
         inp =  result.data.doc;   
           // setColumns({...columns,inp:inp.inp});
-          axios.post("http://localhost:3001/job",{status:2})
+          axios.post("http://65.2.125.131:3001/job",{status:2})
           .then(result=>{
             let count = 0;
             result?.data?.doc.map(e=>{

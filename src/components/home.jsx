@@ -36,7 +36,8 @@ export default function Home(){
     if(!localStorage.getItem("authtodo")){
       navigate("/login")
     }
-  })
+    
+  },[])
 
     return(
         <Box sx={{ display: 'flex' }}>

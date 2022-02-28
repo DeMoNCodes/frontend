@@ -70,7 +70,7 @@ export default function Login(props){
         return;
       }
       setMsg(undefined)
-      axios.post("http://localhost:3001/user",{status:2})
+      axios.post("http://65.2.125.131:3001/user",{status:2})
       .then(result=>{
         if(result.data.status){
           localStorage.setItem("authtodo",result.data.token)
@@ -87,7 +87,7 @@ export default function Login(props){
       }
       setMsg(undefined)
 
-      axios.post("http://localhost:3001/user/register",{fullname:values.fullname,email:values.email,password:values.password})
+      axios.post("http://65.2.125.131:3001/user/register",{fullname:values.fullname,email:values.email,password:values.password})
       .then(result=>{
      
           if(result.data.status){
